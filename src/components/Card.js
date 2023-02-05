@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card() {
+function Card({mealName,price}) {
     /*const [meal, setMeal] = React.useState("")
 
     async function handleClick(){
@@ -12,9 +12,9 @@ function Card() {
     return(
         <div className="meal-card">
             <div className="meal-info">
-                <h3>Sushi</h3>
+                <h3>{mealName}</h3>
                 <p>Ingredients</p>
-                <h5>$33.75</h5>
+                <h5>${price}</h5>
             </div>
             <div className="price-info">
             <form>
