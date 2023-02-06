@@ -24,3 +24,5 @@ export const DUMMY_MEALS = [
       price: 18.99,
     },
   ];
+
+

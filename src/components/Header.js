@@ -2,17 +2,15 @@ import React from "react";
 
 import cart from "../assets/cart.png";
 
-function Header({ amount, resetAmount }) {
+function Header({ amount, resetAmount, changeCartCondition}) {
   return (
     <div className="food-header">
       <h1>ReactMeals</h1>
-      <div className="cart">
+      <div className="cart" onClick={changeCartCondition}>
         <img src={cart} alt="cart" className="cart-img" />
         <h4>Your Cart</h4>
-        <button className="cart-button">{amount}</button>
-        <button className="reset-button" onClick={resetAmount}>
-          Reset
-        </button>
+        <div className="cart-button">{amount}</div>
+        
       </div>
     </div>
   );

@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 
-function Card({ mealName, price, ingredient, increaseAmount}) {
+function Card({ id, mealName, price, ingredient, increaseAmount, addAmountToMeal}) {
   const [number, setNumber] = useState(0);
 
   function handleChange(event) {
     setNumber(parseInt(event.target.value));
   }
 
-  function handleClick() {
+  function handleClick(event) {
+    addAmountToMeal(event.target.id , number)
     increaseAmount(number);
-  }
-
-  function saveAmountandHandle(){
-    handleClick()
 
   }
 
+  
   return (
     <div className="meal-card">
       <div className="meal-info">
@@ -28,7 +26,7 @@ function Card({ mealName, price, ingredient, increaseAmount}) {
           <label for="fname">Amount:</label>
           <input type="number" id="meal-amount" onChange={handleChange} />
         </form>
-        <button className="add-button" onClick={saveAmountandHandle}>
+        <button id={id} className="add-button" onClick={handleClick}>
           +Add
         </button>
       </div>
